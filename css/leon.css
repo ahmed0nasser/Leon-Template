@@ -1,0 +1,580 @@
+/* Start Variables */
+:root {
+    --links-list-color: #eee;
+    --main-color: #03b7be;
+    --secondary-color: #333;
+    --section-padding: 60px;
+    --section-color: #ededf1;
+    --section-second-color: #fafafa;
+}
+
+/* End Variables */
+/* Start Global rules */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.special-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 200px;
+    font-size: 120px;
+    position: relative;
+}
+
+.special-header h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    font-weight: 800;
+    color: var(--section-color);
+    text-align: center;
+}
+
+.special-header p {
+    position: absolute;
+    bottom: 14%;
+    padding: 0;
+    margin: 0;
+    font-size: 0.167em;
+    font-weight: 500;
+    color: #6c6c6c;
+    text-align: center;
+}
+
+/* Extra Small */
+@media (max-width: 566px) {
+    .special-header {
+        font-size: 80px;
+    }
+}
+
+/* End Global rules */
+
+/* Start Header */
+header {
+    padding: 20px;
+    margin: 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header .links {
+    position: relative;
+}
+
+/* Stat icon */
+header .links .icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 25px;
+}
+
+header .links .icon span {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    margin-top: 3px;
+}
+
+header .links .icon span:nth-child(2) {
+    width: 60%;
+    transition: 0.5s;
+}
+
+header .links:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+
+/* End icon */
+/* Start links list */
+header .links ul {
+    position: absolute;
+    top: 200%;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: var(--links-list-color);
+    min-width: 300px;
+    display: none;
+    z-index: 1;
+}
+
+header .links:hover ul {
+    display: block;
+}
+
+header .links ul::before {
+    content: '';
+    border-color: transparent transparent var(--links-list-color) transparent;
+    border-width: 15px;
+    border-style: solid;
+    position: absolute;
+    top: -13%;
+    right: 0;
+}
+
+header .links li:not(:last-child) {
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+header .links li a {
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+header .links li a:hover {
+    padding: 25px;
+}
+
+/* End links list */
+
+header .logo {
+    height: 30px;
+}
+
+/* End Header */
+/* Start Landing */
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../image/rohit-tandon-9wg5jCEPBsw-unsplash.jpg);
+    background-size: cover;
+    height: calc(100vh - 70px);
+}
+
+.landing .intro-text {
+    max-width: 100%;
+    line-height: 1.8;
+}
+
+.landing .intro-text h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.landing .intro-text p {
+    width: 400px;
+    max-width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* End Landing */
+/* Start Features */
+.features {
+    display: flex;
+    justify-content: center;
+    padding: var(--section-padding);
+    background-color: var(--section-second-color);
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 1108px) {
+    .features .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.features .feat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.features i {
+    color: var(--main-color);
+}
+
+.features h3 {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.features p {
+    color: var(--secondary-color);
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* End Features */
+
+/* Start Services */
+.services {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: var(--section-padding);
+}
+
+.services .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.services .services-content .image {
+    position: relative;
+    margin: 0 25px;
+    width: 250px;
+}
+
+.services .services-content .image img {
+    width: inherit;
+}
+
+.services .services-content .image::after {
+    content: "";
+    width: 100px;
+    height: calc(100% + 80px);
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    background-color: var(--secondary-color);
+    z-index: -1;
+}
+
+.services .srv {
+    display: flex;
+    padding: 20px 0;
+}
+
+.services .srv .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.services .srv .text h3 {
+    padding: 0;
+    margin: 0;
+    text-indent: 25px;
+    font-weight: 800;
+}
+
+.services .srv .text p {
+    padding: 0;
+    margin-left: 25px;
+    color: #b3b2b2;
+    line-height: 1.5;
+}
+
+.services .srv i {
+    color: var(--main-color);
+}
+
+@media (max-width: 1108px) {
+    .services .services-content .image {
+        display: none;
+    }
+}
+
+/* End Services */
+/* Start Portfolio */
+.portfolio {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: var(--section-padding);
+    background-color: var(--section-second-color);
+}
+
+.portfolio .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio .card {
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio .card .text {
+    padding: 20px;
+    background-color: white;
+}
+
+.portfolio .card .text h3 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.portfolio .card .text p {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* End Portfolio */
+
+/* Start About */
+.about {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: var(--section-padding);
+}
+
+.about .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about .about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 240px;
+}
+
+.about .about-content .image {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.about .about-content .image::before {
+    content: "";
+    width: 25%;
+    height: 150%;
+    background-color: var(--section-second-color);
+    position: absolute;
+    top: -25%;
+    left: -3%;
+    z-index: -1;
+}
+
+.about .about-content .image::after {
+    content: "";
+    width: 50%;
+    height: 93%;
+    background-color: var(--main-color);
+    position: absolute;
+    top: -15%;
+    right: -30%;
+    z-index: -1;
+}
+
+@media (max-width: 1005px) {
+    .about .about-content .image::after {
+        width: 30%;
+        right: -5%;
+    }
+}
+
+@media (max-width: 992px) {
+    .about .about-content .image::after {
+        top: -10%;
+        right: -5%;
+    }
+}
+
+.about .about-content .text p:first-child {
+    position: relative;
+    padding-bottom: 40px;
+    margin: 0;
+    font-weight: 800;
+    line-height: 1.8;
+}
+
+.about .about-content .text p:first-child::before {
+    content: "";
+    width: 30%;
+    height: 125%;
+    background-color: white;
+    position: absolute;
+    top: -30%;
+    left: -47%;
+}
+
+@media (max-width: 1005px) {
+    .about .about-content .text p:first-child::before {
+        display: none;
+    }
+}
+
+.about .about-content .text p:first-child::after {
+    content: "";
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-color);
+}
+
+.about .about-content .text p:last-child {
+    padding: 15px 0;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* End About */
+
+/* Start Contact */
+.contact {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: var(--section-padding);
+    background-color: var(--section-second-color);
+}
+
+.contact .contact-content {
+    align-self: flex-start;
+}
+
+.contact .title {
+    color: var(--secondary-color);
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact .email {
+    display: inline-block;
+    position: relative;
+    color: var(--main-color);
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-left: 50px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    border-bottom: 20px solid white;
+    text-decoration: none;
+}
+
+.contact .contact-content .social {
+    display: flex;
+}
+
+.contact .contact-content .social .text {
+    text-wrap: nowrap;
+    font-weight: 400;
+    margin: 0 0 0 120px;
+}
+
+.contact .contact-content .icons i {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin-left: 30px;
+}
+
+/* Extra Small */
+@media (max-width: 566px) {
+    .contact .title {
+        font-size: 30px;
+    }
+
+    .contact .email {
+        font-size: 25px;
+    }
+
+    .contact .contact-content .social .text {
+        margin: 20px 0;
+    }
+
+    .contact .contact-content .social {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+/* End Contact */
+
+/* Start Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: var(--section-padding);
+    background-color: var(--secondary-color);
+}
+
+footer .footer-content {
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
+
+footer .footer-content span {
+    color: var(--main-color);
+}
+
+/* End Footer */
